@@ -12,15 +12,7 @@
   var total = 0;
   var calculator = {};
 
-    calculator.load = function(x) {
-      total = x;
 
-      if(typeof x !== "number"){
-    throw new Error("Wrong Data type!!");
-   }
-   return total;
-
-};
 
 
   /**
@@ -28,10 +20,15 @@
    * @param  { Number } x
    * @return { Number }    current total
    */
-  calculator.getTotal = function(x) {
-      return total;
-};
+  calculator.load = function(x) {
+      total = x;
 
+      if(typeof x !== "number"){
+        throw new Error("Wrong Data type!!");
+   }
+   return total;
+
+};
 
 
   /**
@@ -39,14 +36,19 @@
    * @return { Number }
    */
 
+  calculator.getTotal = function(x) {
+      return total;
+};
+
   /**
    * Sums the value passed in with `total`
    * @param { Number } x
    */
   calculator.add = function(x){
-      total+=x;
-        if(typeof x !== "number"){
-    throw new Error("Wrong Data type!!");
+      total += x;
+
+       if(typeof x !== "number"){
+         throw new Error("Wrong Data type!!");
    }
    return total;
 };
@@ -55,10 +57,11 @@
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
-      calculator.subtract = function(x) {
-    total-=x;
+  calculator.subtract = function(x) {
+      total-=x;
+
       if(typeof x !== "number"){
-    throw new Error("Wrong Data type!!");
+        throw new Error("Wrong Data type!!");
    }
    return total;
 };
@@ -67,10 +70,11 @@
    * Multiplies the value by `total`
    * @param  { Number } x
    */
-   calculator.multiply = function(x) {
-    total*=x;
+  calculator.multiply = function(x) {
+      total *= x;
+
       if(typeof x !== "number"){
-    throw new Error("Wrong Data type!!");
+        throw new Error("Wrong Data type!!");
    }
    return total;
 };
@@ -79,10 +83,11 @@
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
-   calculator.divide = function(x) {
-    total/=x;
+  calculator.divide = function(x) {
+      total /= x;
+
       if(typeof x !== "number"){
-    throw new Error("Wrong Data type!!");
+        throw new Error("Wrong Data type!!");
     }
     return total;
    };
@@ -91,7 +96,7 @@
    * Return the value stored at `memory`
    * @return { Number }
    */
-   calculator.recallMemory = function(){
+  calculator.recallMemory = function(){
     return memory;
    };
 
@@ -99,7 +104,7 @@
   /**
    * Stores the value of `total` to `memory`
    */
-   calculator.saveMemory = function(){
+  calculator.saveMemory = function(){
     memory = total;
     return memory;
    };
@@ -107,7 +112,7 @@
   /**
    * Clear the value stored at `memory`
    */
-   calculator.clearMemory = function(){
+  calculator.clearMemory = function(){
     memory = 0;
    };
 
